@@ -1,0 +1,16 @@
+{
+  "_status": "INTENTIONALLY NOT AN ACTIVE HOOK -- no top-level 'hooks' key on purpose, so this file cannot be accidentally auto-loaded.",
+  "_reason": "This environment's hooks reference does not document a tool-name or file-glob matcher for PostToolUse, and the candidate configuration below was never executed/verified in a live session (terminal access was unavailable when it was authored). An unscoped, untested PostToolUse hook would run scripts/check-prose-quotes.ps1 after every tool call in every session -- including plain reads and searches -- not just after prose edits. That is a real cost/noise risk, not a deterministic-enforcement showcase.",
+  "_run_manually_instead": "pwsh -File scripts/check-prose-quotes.ps1  (see scripts/README.md)",
+  "_candidate_config_if_verified": {
+    "hooks": {
+      "PostToolUse": [
+        {
+          "type": "command",
+          "command": "pwsh -NoProfile -File scripts/check-prose-quotes.ps1",
+          "timeout": 15
+        }
+      ]
+    }
+  }
+}
